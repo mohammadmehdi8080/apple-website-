@@ -376,7 +376,104 @@ body{
     left: 10%;
     transform: rotate(-90deg);
 }
+/* section 1 */
+.section_1{
+    width: 100%;
+    height: 100vh;
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
 
+}
+.section_1_heading{
+    font-size: 12rem;
+    text-align: center;
+    position: relative;
+}
+.section_1_heading::before{
+    content: "";
+    width: 100%;
+    height: 30vw;
+    background-image: linear-gradient(var(--primary-color), var(--white-color));
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: skewX(-50deg);
+    transform-origin: left top;
+    z-index: -1;
+    border-radius: 1rem;
+}
+.section_1_iPhones{
+    height: 60vh;
+    width: 50vw;
+    background-image: linear-gradient(var(--primary-color), var(--white-color));
+    border-radius: 0.5rem;
+    text-align: center;
+    position: relative;
+}
+.section_1_img:last-child{
+    opacity: 0;
+    visibility: hidden;
+}
+.section_1_iPhones:hover .section_1_img:last-child {
+    opacity: 1;
+    visibility: visible;
+}
+.section_1_iPhones:hover .section_1_img:first-child{
+    opacity: 0;
+    visibility: hidden;
+}
+.section_1_img{
+    width: 45rem;
+    margin: 4rem auto;
+    transition: all 600ms ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section_1_img:first-child{
+    width: 65rem;
+}
+.section_1_btns{
+    display: flex;
+    gap: 12rem;
+    margin-top: 12rem;
+    justify-content: center;
+}
+.section_1_btn{
+    width: 7rem;
+    height: 7rem;
+    background-image: linear-gradient(to right, rgb(51, 51, 51) 60%, rgb(82, 82, 82));
+    border-radius: 50%;
+    position: relative;
+}
+.section_1_btn span{
+    position: absolute;
+    color: var(--primary-color);
+    top: -4rem;
+    font-size: 2rem;
+    width: 15rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transform: scale(0);
+    margin: 0 -4rem;
+    text-align: center;
+    transition: all 300ms ease-in-out;
+}
+.section_1_btn:hover span{
+    transform: scale(1);
+}
+.section_1_btn::after{
+    content: "";
+    width: 50%;
+    height: 50%;
+    display: block;
+    border: 0.3rem solid #6edae6;
+    border-radius: 1rem;
+    margin: 1.5rem auto;
+}
 
 
 /* responsive */
