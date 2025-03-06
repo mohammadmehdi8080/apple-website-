@@ -1,0 +1,442 @@
+/* rest style */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration : none ;
+}
+/* font */
+@font-face {
+    font-family: "workSans-light";
+    src: url("../font/WorkSans-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family: "WorkSans-Regular";
+    src: url("../font/WorkSans-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "WorkSans-SemiBold";
+    src: url("../font/WorkSans-SemiBold.ttf") format("truetype");
+}
+
+/* base style */
+html{
+    box-sizing: border-box;
+    /* font-size: 10px; */
+    font-size: 62.5%;
+}
+* , *::after, *::before {
+    box-sizing: inherit;
+}
+
+body{
+    line-height: 1.6;
+    font-size: 1.6rem;
+    font-family: "WorkSans-Regular";
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 130rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+:root {
+    --primary-color: #6edae6;
+    --white-color: #fff;
+    --black-color: #000;
+}
+/* helper class */
+
+/* global style */
+.btn{
+    outline: none;
+    border: none;
+    font-family: inherit;
+}
+
+
+/* header styles */
+.header{
+    clip-path: polygon(100% 0, 100% 97%, 36% 100%, 0 100%, 0 0);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.nav__wrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+.header__logo{
+
+}
+.header__logo svg{
+    width: 6rem;
+}
+.list{
+    display: flex;
+    flex-basis: 35%;
+    justify-content: space-between;
+}
+.list__item{
+
+}
+.list__item__link{
+    color: var(--black-color);
+    font-size: 1.7rem;
+    transition: all 200ms ease-in-out;
+    display: inline-block;
+    width: 12rem;
+    text-align: center;
+}
+.list__item__link:hover{
+    transform: scale(1.4);
+}
+.banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+.banner__right__content{
+    order: 1;
+    text-align: center;
+}
+.banner__title{
+    font-size: 12rem;
+}
+.banner__text{
+    font-size: 4rem;
+}
+.banner__name{
+    font-size: 2rem;
+    margin: 2rem 0;
+    display: block;
+}
+.banner__btn{
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    background-color: var(--black-color);
+    color: var(--primary-color);
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    clip-path: polygon(
+            50% 0%,
+            81% 5%,
+            100% 0,
+            100% 100%,
+            80% 95%,
+            50% 100%,
+            20% 95%,
+            0 100%,
+            0 0,
+            23% 5%
+    );
+    transition: clip-path 0.5s;
+    margin-top: 1.5rem;
+}
+.banner__btn:hover{
+    clip-path: polygon(
+            40% 15%,
+            77% 15%,
+            100% 10%,
+            100% 90%,
+            75% 85%,
+            40% 85%,
+            30% 100%,
+            0 50%,
+            0 50%,
+            30% 0
+    );
+}
+.banner__left__content{
+
+}
+.cube__wrapper{
+    perspective: 100rem;
+}
+.cube{
+    background-color: var(--white-color);
+    width: 30rem;
+    height: 50rem;
+    transform-style: preserve-3d;
+    transform: rotateY(0) rotateZ(0) rotateX(0);
+    transition: all 150ms ease-in-out;
+}
+.front_side{
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    transform: translateZ(5rem);
+    background-color: #fee;
+    position: absolute;
+    transform-style: preserve-3d;
+    box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+.front_side::before,
+.front_side::after {
+    content: "";
+    width: 100%;
+    height: 10rem;
+    background-color: #fee;
+    position: absolute;
+    box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.front_side::before {
+    top: 0;
+    left: 0;
+    transform: rotateX(-90deg) ;
+    transform-origin: top;
+}
+
+.front_side::after {
+    bottom: 0;
+    left: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+.front__img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.back_side{
+    width: 100%;
+    height: 100%;
+    transform: translateZ(-5rem);
+    background-color: #fee;
+    position: absolute;
+    transform-style: preserve-3d;
+    box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+.back_side::before,
+.back_side::after {
+    content: "iPhone";
+    width: 10rem;
+    height: 100%;
+    background-color: #fee;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ec1919;
+    box-shadow: inset 0.1rem 0.1rem 0.1rem #ddd, inset -0.1rem -0.1rem 0.1rem #ddd;
+}
+
+.back_side::before {
+    top: 0;
+    left: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+.back_side::after {
+    top: 0;
+    right: 0;
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+.back_side_icon{
+    width: 15rem;
+    fill: var(--primary-color);
+    transform: rotateY(180deg) translate(-75px, 160px);;
+}
+
+/* slid show */
+.slideShow{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.slideShow div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out ;
+}
+.slideShow div.change{
+    opacity: 1;
+}
+.controls{
+    background-color: var(--black-color);
+    width: 9rem;
+    height: 9rem;
+    position: absolute;
+    bottom: -8rem;
+    left: 11rem;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+}
+.controls svg{
+    width: 2.5rem;
+    transition: all 100ms ease-in-out;
+    fill: var(--primary-color);
+}
+.controls svg:hover{
+    transform: scale(1.08);
+}
+.controls a {
+    position: absolute;
+}
+
+.controls a:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls a:nth-child(2) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls a:nth-child(3) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.controls a:nth-child(4) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.controls a:nth-child(5) {
+    top: 10%;
+    right: 10%;
+    transform: rotate(5deg);
+}
+
+.controls a:nth-child(6) {
+    bottom: 10%;
+    left: 10%;
+    transform: rotate(-90deg);
+}
+
+
+
+/* responsive */
+
+@media screen and (max-width:1200px) {
+
+}
+@media screen and (max-width:992px) {
+    .header{
+        height: max-content;
+    }
+    .banner{
+        padding-bottom: 20rem;
+        flex-direction: column;
+    }
+    .banner__right__content{
+        margin-bottom: 8rem;
+        order: 0;
+    }
+    .banner__title{
+        font-size: 6rem;
+    }
+    .banner__text{
+        font-size: 2.1rem;
+        margin: 2rem 0;
+    }
+    .banner__name{
+        font-size: 1.7rem;
+    }
+    .cube{
+        width: 20rem;
+        height: 30rem;
+    }
+    .controls{
+        bottom: -12rem;
+        left: 6rem;
+    }
+    .back_side_icon{
+        transform:  translate(21px, 72px);
+    }
+}
+@media screen and (max-width:768px) {
+
+    .banner__title{
+        font-size: 4rem;
+    }
+    .banner__btn{
+        padding: 1rem 3rem;
+    }
+}
+@media screen and (max-width:576px) {
+    .nav__wrapper{
+        flex-direction: column;
+    }
+    .list{
+        flex-direction: column;
+    }
+    .list__item__link{
+        width: 10rem;
+        font-size: 1.4rem;
+    }
+
+}
