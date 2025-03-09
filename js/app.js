@@ -79,3 +79,64 @@ function playPause () {
     }
 }
 playPause()
+
+let section_2 = document.getElementById("section-2")
+let section_4 = document.getElementById("section-4")
+window.addEventListener("scroll", ()=>{
+    if (window.pageYOffset + window.innerHeight > section_2.offsetTop + section_2.offsetHeight/2) {
+        section_2.classList.add("change")
+    }
+    if (window.pageYOffset + window.innerHeight > section_4.offsetTop) {
+        section_4.classList.add("visible")
+    }
+})
+
+// watch slider
+
+let watch_bands = document.querySelector(".watch_bands")
+let watch_cases = document.querySelector(".watch_cases")
+let upControl = document.querySelector(".upControl")
+let rightControl = document.querySelector(".rightControl")
+let leftControl = document.querySelector(".leftControl")
+let downControl = document.querySelector(".downControl")
+let axisY = 0
+let axisX = 0
+
+function hideControl () {
+    if (axisY === -245) {
+        upControl.parentElement.classList.add("hide_control")
+    } else {
+        upControl.parentElement.classList.remove("hide_control")
+    }
+    if (axisY === 70) {
+        downControl.parentElement.classList.add("hide_control")
+    } else {
+        downControl.parentElement.classList.remove("hide_control")
+    }
+    if (axisX === 140) {
+        rightControl.parentElement.classList.add("hide_control")
+    } else {
+        rightControl.parentElement.classList.remove("hide_control")
+    }
+    if (axisX === -175) {
+        leftControl.parentElement.classList.add("hide_control")
+    } else {
+        leftControl.parentElement.classList.remove("hide_control")
+    }
+}
+upControl.addEventListener("click" , ()=>{
+    watch_cases.style.marginTop = `${axisY -= 35}rem`
+    hideControl()
+})
+rightControl.addEventListener("click" , ()=>{
+    watch_bands.style.marginRight = `${axisX +=35}rem`
+    hideControl()
+})
+leftControl.addEventListener("click" , ()=>{
+    watch_bands.style.marginRight = `${axisX -= 35}rem`
+    hideControl()
+})
+downControl.addEventListener("click" , ()=>{
+    watch_cases.style.marginTop = `${axisY += 35}rem`
+    hideControl()
+})
