@@ -770,6 +770,7 @@ body{
 .btn-color{
     background-color: var(--white-color);
     color: var(--primary-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.44);
 }
 /* footer */
 .footer{
@@ -866,6 +867,23 @@ body{
     }
     .section_1_img:last-child{
         width: 60vw;
+    }
+    .airPod_title{
+        font-size: 15vw;
+    }
+    .airPod_buttons{
+        top: 62%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+    }
+    .airPod_wrapper{
+        flex-direction: column;
+    }
+    .footer_wrapper{
+        flex-wrap: wrap;
+    }
+    .footer_img{
+        width: 6rem;
     }
 }
 @media screen and (max-width:576px) {
